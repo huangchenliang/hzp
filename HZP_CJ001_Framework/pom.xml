@@ -27,5 +27,6 @@
 	<!-- 包含的子工程maven模块 -->
 	<modules>
 		<module>framework-common</module>
+        <module>framework-jpa</module>
     </modules>
 </project>
