@@ -28,5 +28,6 @@
 	<modules>
 		<module>framework-common</module>
 		<module>framework-jpa</module>
-    </modules>
+		<module>framework-dispatch</module>
+	</modules>
 </project>
