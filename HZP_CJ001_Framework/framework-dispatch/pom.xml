@@ -38,7 +38,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!--使用jetty容器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
