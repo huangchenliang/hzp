@@ -29,5 +29,6 @@
 		<module>framework-common</module>
 		<module>framework-jpa</module>
 		<module>framework-dispatch</module>
-	</modules>
+        <module>framework-springcloud</module>
+    </modules>
 </project>
