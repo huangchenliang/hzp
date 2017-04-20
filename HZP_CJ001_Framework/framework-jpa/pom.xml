@@ -20,7 +20,11 @@
             <version>1.0.1-RELEASE</version>
         </dependency>
         <!--依赖项底层接口和模块 end -->
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- spring boot jpa start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,6 +1,5 @@
 package com.hzp.framework.common.config;
 
-import com.hzp.framework.common.filter.SessionTimeOutFilter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.MultipartConfigFactory;
@@ -22,24 +21,24 @@ public class WebAppConfig
     @Value("${notAllowUrls}")
     private String[] notAllowUrls;
 
-    @Bean
-    public SessionTimeOutFilter sessionTimeOutFilter()
-    {
-        return new SessionTimeOutFilter();
-    }
+//    @Bean
+//    public SessionTimeOutFilter sessionTimeOutFilter()
+//    {
+//        return new SessionTimeOutFilter();
+//    }
 
-    @Bean
-    public FilterRegistrationBean filterRegistration()
-    {
-
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(sessionTimeOutFilter());
-        registration.addUrlPatterns(notAllowUrls);
-        // registration.addInitParameter("paramName", "paramValue");
-        // registration.setName("testFilter");
-        registration.setOrder(1);
-        return registration;
-    }
+//    @Bean
+//    public FilterRegistrationBean filterRegistration()
+//    {
+//
+//        FilterRegistrationBean registration = new FilterRegistrationBean();
+//        registration.setFilter(sessionTimeOutFilter());
+//        registration.addUrlPatterns(notAllowUrls);
+//        // registration.addInitParameter("paramName", "paramValue");
+//        // registration.setName("testFilter");
+//        registration.setOrder(1);
+//        return registration;
+//    }
 
     @Bean
     public MultipartConfigElement multipartConfigElement() {
