@@ -27,7 +27,7 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactoryPrimary", transactionManagerRef = "transactionManagerPrimary", basePackages =
-{"com.apec.*"})
+{"com.hzp.*"})
 // 设置DAO所在位置
 public class PrimaryCfg
 {
@@ -49,7 +49,7 @@ public class PrimaryCfg
     {
 
         return builder.dataSource(primaryDataSource).properties(getVendorProperties(primaryDataSource))
-            .packages("com.apec.*") // 设置实体类所在位置
+            .packages("com.hzp.*") // 设置实体类所在位置
             .persistenceUnit("primaryPersistenceUnit").build();
     }
 
