@@ -123,30 +123,30 @@ public abstract class AbstractRequestService
         Map<String, String[]> parameterMap = request.getParameterMap();
         Map<String, Object> uriMap = new HashMap<>();// uri后面的参数
         String requestJson = null;// 流数据，此处数据格式是json
-        if(null != parameterMap && !parameterMap.isEmpty())
-        {
-            for(Map.Entry<String, String[]> entry : parameterMap.entrySet())
-            {
-                String key = entry.getKey();
-                String[] value = entry.getValue();
-                if(null == requestJson && null != key && key.startsWith( "{" ) && key
-                    .endsWith( "}" ))// 判断官方经过转换的流式json
-                {
-                    requestJson = key;
-                }
-                else
-                {
-                    if(null != value && value.length == 1)
-                    {
-                        uriMap.put( key, value[0] );
-                    }
-                    else if(null != value && value.length > 1)
-                    {
-                        uriMap.put( key, value );
-                    }
-                }
-            }
-        }
+//        if(null != parameterMap && !parameterMap.isEmpty())
+//        {
+//            for(Map.Entry<String, String[]> entry : parameterMap.entrySet())
+//            {
+//                String key = entry.getKey();
+//                String[] value = entry.getValue();
+//                if(null == requestJson && null != key && key.startsWith( "{" ) && key
+//                    .endsWith( "}" ))// 判断官方经过转换的流式json
+//                {
+//                    requestJson = key;
+//                }
+//                else
+//                {
+//                    if(null != value && value.length == 1)
+//                    {
+//                        uriMap.put( key, value[0] );
+//                    }
+//                    else if(null != value && value.length > 1)
+//                    {
+//                        uriMap.put( key, value );
+//                    }
+//                }
+//            }
+//        }
 
         // 纯json请求处理
         if(Constants.APPLICATION_JSON.equalsIgnoreCase( request.getContentType() ))
@@ -157,10 +157,6 @@ public abstract class AbstractRequestService
         Map<String, Object> attrMap = parseRequestAttribute( request );
         String pageJson = JssbUtil.assemblRequestJSON( requestJson, JsonUtil.toJSONString( uriMap ),
                                                        JsonUtil.toJSONString( attrMap ) );
-        attrMap = null;
-        uriMap = null;
-        parameterMap = null;
-        // log.info(pageJson);
         return pageJson;
     }
 
@@ -250,7 +246,7 @@ public abstract class AbstractRequestService
         return fetchSize;
     }
 
-    
+
     /**
     *
     * @param request 经过spring处理过的request，请求输入流已经没有数据
@@ -279,6 +275,6 @@ public abstract class AbstractRequestService
        }
       return uriMap;
    }
-   
-   
+
+
 }

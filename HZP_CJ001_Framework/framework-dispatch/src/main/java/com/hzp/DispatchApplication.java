@@ -15,6 +15,5 @@ public class DispatchApplication extends BaseApplication
     {
         SpringApplication.run(DispatchApplication.class, args);
     }
-    
 
 }

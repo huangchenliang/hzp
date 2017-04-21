@@ -18,8 +18,8 @@ import javax.servlet.MultipartConfigElement;
 @Configuration
 public class WebAppConfig
 {
-    @Value("${notAllowUrls}")
-    private String[] notAllowUrls;
+//    @Value("${notAllowUrls}")
+    //    private String[] notAllowUrls;
 
 //    @Bean
 //    public SessionTimeOutFilter sessionTimeOutFilter()
