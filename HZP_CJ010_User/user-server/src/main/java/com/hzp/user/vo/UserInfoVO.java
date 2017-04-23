@@ -2,6 +2,8 @@ package com.hzp.user.vo;
 
 import com.hzp.framework.vo.BaseVO;
 
+import java.util.Date;
+
 /**
  * @Description: 封装用户信息
  *
@@ -55,7 +57,7 @@ public class UserInfoVO extends BaseVO
     /**
      * 用户出生日期
      */
-    private String birth;
+    private Date birth;
 
     /**
      * 用户地址
@@ -227,24 +229,6 @@ public class UserInfoVO extends BaseVO
     }
 
     /**
-     * 获取用户出生日期
-     * @return birth 用户出生日期
-     */
-    public String getBirth()
-    {
-        return this.birth;
-    }
-
-    /**
-     * 设置用户出生日期
-     * @param birth 用户出生日期
-     */
-    public void setBirth(String birth)
-    {
-        this.birth = birth;
-    }
-
-    /**
      * 获取用户地址
      * @return address 用户地址
      */
@@ -332,5 +316,23 @@ public class UserInfoVO extends BaseVO
     public void setRemark(String remark)
     {
         this.remark = remark;
+    }
+
+    /**
+     * 获取用户出生日期
+     * @return birth 用户出生日期
+     */
+    public Date getBirth()
+    {
+        return this.birth;
+    }
+
+    /**
+     * 设置用户出生日期
+     * @param birth 用户出生日期
+     */
+    public void setBirth(Date birth)
+    {
+        this.birth = birth;
     }
 }

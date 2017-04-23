@@ -3,13 +3,14 @@ package com.hzp.user.business.service.impl;
 import com.hzp.framework.base.BaseDomainService;
 import com.hzp.framework.common.ErrorCodeConst;
 import com.hzp.framework.common.enumtype.EnableFlag;
-import com.hzp.framework.common.exception.DAOException;
+import com.hzp.framework.common.exception.BusinessException;
 import com.hzp.framework.common.exception.DomainServiceException;
 import com.hzp.framework.common.exception.HzpRuntimeException;
 import com.hzp.framework.common.util.BeanUtils;
 import com.hzp.framework.jpa.common.tools.SqlFilter;
 import com.hzp.user.access.dao.UserInfoDAO;
 import com.hzp.user.business.service.UserInfoService;
+import com.hzp.user.dto.UserInfoDTO;
 import com.hzp.user.model.QUserInfo;
 import com.hzp.user.model.UserInfo;
 import com.hzp.user.vo.UserInfoVO;
@@ -97,5 +98,22 @@ public class UserInfoServiceImpl extends BaseDomainService implements UserInfoSe
             log.error("It occured error in excuting UserInfoServiceImpl.add DB case:" + e.getMessage());
             throw new DomainServiceException(ErrorCodeConst.DAO_DELETE_EXCEPTION, e);
         }
+    }
+
+    @Override
+    public UserInfoDTO getUserByUserNo(UserInfoVO userInfoVO) throws HzpRuntimeException
+    {
+        if(Objects.isNull(userInfoVO) || StringUtils.isBlank(userInfoVO.getUserNo()))
+        {
+            throw new BusinessException(ErrorCodeConst.USER_NO_NOT_NULL);
+        }
+        UserInfo userInfo = userInfoDAO.findByUserNoAndEnableFlag(userInfoVO.getUserNo(), EnableFlag.Y);
+        UserInfoDTO userInfoDTO = null;
+        if(Objects.nonNull(userInfo))
+        {
+            userInfoDTO = new UserInfoDTO();
+            BeanUtils.copyProperties(userInfo, userInfoDTO);
+        }
+        return userInfoDTO;
     }
 }

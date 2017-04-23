@@ -24,17 +24,9 @@ public interface ErrorCodeConst
     String PROCEDURE_EXCEPTION = "100045";
 
 
-    //=========== 支付错误信息码start===================
-    String SIGN_NOT_PASS = "252000";
-    String OPERATE_FAIL = "252001";
-    String BUILD_SIGN_FAIL = "252002";
-    String PUSH_ORDER_FAIL = "252003";
-    String GET_PAY_RESULT_FAIL = "252004";
-    String ANALY_MESSAGE_FAIL = "252005";
-    String NOT_ALLOW_REPEAT_SUBMIT = "252006";
-    String REFUND_FAIL = "252007";
-    String REFUND_FEE_CAN_NOT_GE_TOTAL_FEE = "252008";
-    //=========== 支付错误信息码end===================
+    //=========== 用户信息错误码start===================
+    String USER_NO_NOT_NULL = "190100";
+    //=========== 用户信息错误码end===================
 
     //=========== 购物车错误码start===================
     String CHOOSE_ADDCART_GOODS = "190000";

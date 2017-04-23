@@ -6,13 +6,15 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.util.Date;
 
 /**
  * 用户表
  */
 @Entity
 @GenericGenerator(name = Constants.SYSTEM_GENERATOR, strategy = Constants.IDENTITY)
-public class UserInfo extends BaseModel<Long> {
+public class UserInfo extends BaseModel<Long>
+{
 
     /**
      * 用户编号
@@ -66,7 +68,7 @@ public class UserInfo extends BaseModel<Long> {
      * 用户出生日期
      */
     @Column(name = "BIRTH")
-    private String birth;
+    private Date birth;
 
     /**
      * 用户地址
@@ -98,12 +100,12 @@ public class UserInfo extends BaseModel<Long> {
     @Column(name = "REMARK")
     private String remark;
 
-
     /**
      * 获取用户编号
      * @return userNo 用户编号
      */
-    public String getUserNo() {
+    public String getUserNo()
+    {
         return this.userNo;
     }
 
@@ -111,7 +113,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户编号
      * @param userNo 用户编号
      */
-    public void setUserNo(String userNo) {
+    public void setUserNo(String userNo)
+    {
         this.userNo = userNo;
     }
 
@@ -119,7 +122,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取用户姓名
      * @return userName 用户姓名
      */
-    public String getUserName() {
+    public String getUserName()
+    {
         return this.userName;
     }
 
@@ -127,7 +131,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户姓名
      * @param userName 用户姓名
      */
-    public void setUserName(String userName) {
+    public void setUserName(String userName)
+    {
         this.userName = userName;
     }
 
@@ -135,7 +140,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取用户职业
      * @return profession 用户职业
      */
-    public String getProfession() {
+    public String getProfession()
+    {
         return this.profession;
     }
 
@@ -143,7 +149,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户职业
      * @param profession 用户职业
      */
-    public void setProfession(String profession) {
+    public void setProfession(String profession)
+    {
         this.profession = profession;
     }
 
@@ -151,7 +158,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取用户头像
      * @return head 用户头像
      */
-    public String getHead() {
+    public String getHead()
+    {
         return this.head;
     }
 
@@ -159,7 +167,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户头像
      * @param head 用户头像
      */
-    public void setHead(String head) {
+    public void setHead(String head)
+    {
         this.head = head;
     }
 
@@ -167,7 +176,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取第三方帐号
      * @return thirdAccount 第三方帐号
      */
-    public String getThirdAccount() {
+    public String getThirdAccount()
+    {
         return this.thirdAccount;
     }
 
@@ -175,7 +185,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置第三方帐号
      * @param thirdAccount 第三方帐号
      */
-    public void setThirdAccount(String thirdAccount) {
+    public void setThirdAccount(String thirdAccount)
+    {
         this.thirdAccount = thirdAccount;
     }
 
@@ -183,7 +194,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取昵称
      * @return nickname 昵称
      */
-    public String getNickname() {
+    public String getNickname()
+    {
         return this.nickname;
     }
 
@@ -191,7 +203,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置昵称
      * @param nickname 昵称
      */
-    public void setNickname(String nickname) {
+    public void setNickname(String nickname)
+    {
         this.nickname = nickname;
     }
 
@@ -199,7 +212,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取用户性别
      * @return sex 用户性别
      */
-    public String getSex() {
+    public String getSex()
+    {
         return this.sex;
     }
 
@@ -207,7 +221,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户性别
      * @param sex 用户性别
      */
-    public void setSex(String sex) {
+    public void setSex(String sex)
+    {
         this.sex = sex;
     }
 
@@ -215,7 +230,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取用户手机号
      * @return phone 用户手机号
      */
-    public String getPhone() {
+    public String getPhone()
+    {
         return this.phone;
     }
 
@@ -223,31 +239,17 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户手机号
      * @param phone 用户手机号
      */
-    public void setPhone(String phone) {
+    public void setPhone(String phone)
+    {
         this.phone = phone;
-    }
-
-    /**
-     * 获取用户出生日期
-     * @return birth 用户出生日期
-     */
-    public String getBirth() {
-        return this.birth;
-    }
-
-    /**
-     * 设置用户出生日期
-     * @param birth 用户出生日期
-     */
-    public void setBirth(String birth) {
-        this.birth = birth;
     }
 
     /**
      * 获取用户地址
      * @return address 用户地址
      */
-    public String getAddress() {
+    public String getAddress()
+    {
         return this.address;
     }
 
@@ -255,7 +257,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置用户地址
      * @param address 用户地址
      */
-    public void setAddress(String address) {
+    public void setAddress(String address)
+    {
         this.address = address;
     }
 
@@ -263,7 +266,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取注册IP
      * @return regIp 注册IP
      */
-    public String getRegIp() {
+    public String getRegIp()
+    {
         return this.regIp;
     }
 
@@ -271,7 +275,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置注册IP
      * @param regIp 注册IP
      */
-    public void setRegIp(String regIp) {
+    public void setRegIp(String regIp)
+    {
         this.regIp = regIp;
     }
 
@@ -279,7 +284,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取最后一次登录IP
      * @return lastLoginIp 最后一次登录IP
      */
-    public String getLastLoginIp() {
+    public String getLastLoginIp()
+    {
         return this.lastLoginIp;
     }
 
@@ -287,7 +293,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置最后一次登录IP
      * @param lastLoginIp 最后一次登录IP
      */
-    public void setLastLoginIp(String lastLoginIp) {
+    public void setLastLoginIp(String lastLoginIp)
+    {
         this.lastLoginIp = lastLoginIp;
     }
 
@@ -295,7 +302,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取登录次数
      * @return loginTimes 登录次数
      */
-    public Long getLoginTimes() {
+    public Long getLoginTimes()
+    {
         return this.loginTimes;
     }
 
@@ -303,7 +311,8 @@ public class UserInfo extends BaseModel<Long> {
      * 设置登录次数
      * @param loginTimes 登录次数
      */
-    public void setLoginTimes(Long loginTimes) {
+    public void setLoginTimes(Long loginTimes)
+    {
         this.loginTimes = loginTimes;
     }
 
@@ -311,7 +320,8 @@ public class UserInfo extends BaseModel<Long> {
      * 获取备注
      * @return remark 备注
      */
-    public String getRemark() {
+    public String getRemark()
+    {
         return this.remark;
     }
 
@@ -319,7 +329,26 @@ public class UserInfo extends BaseModel<Long> {
      * 设置备注
      * @param remark 备注
      */
-    public void setRemark(String remark) {
+    public void setRemark(String remark)
+    {
         this.remark = remark;
+    }
+
+    /**
+     * 获取用户出生日期
+     * @return birth 用户出生日期
+     */
+    public Date getBirth()
+    {
+        return this.birth;
+    }
+
+    /**
+     * 设置用户出生日期
+     * @param birth 用户出生日期
+     */
+    public void setBirth(Date birth)
+    {
+        this.birth = birth;
     }
 }
