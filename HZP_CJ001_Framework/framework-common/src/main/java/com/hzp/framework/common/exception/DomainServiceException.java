@@ -1,6 +1,6 @@
 package com.hzp.framework.common.exception;
 
-public class DomainServiceException extends ApecRuntimeException
+public class DomainServiceException extends HzpRuntimeException
 {
     private static final long serialVersionUID = -240536959932968350L;
 

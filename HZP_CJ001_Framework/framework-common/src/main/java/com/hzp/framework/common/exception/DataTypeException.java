@@ -7,7 +7,7 @@ package com.hzp.framework.common.exception;
  * 完成日期： 2016-07-25
  * 编码作者： 
 */
-public class DataTypeException extends ApecRuntimeException
+public class DataTypeException extends HzpRuntimeException
 {
 
     private static final long serialVersionUID = 1336373165807040572L;

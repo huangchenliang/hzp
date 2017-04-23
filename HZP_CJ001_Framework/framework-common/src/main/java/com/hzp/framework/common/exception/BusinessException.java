@@ -9,7 +9,7 @@ package com.hzp.framework.common.exception;
  * @date 2016年8月17日
  *
  */
-public class BusinessException extends ApecRuntimeException
+public class BusinessException extends HzpRuntimeException
 {
     private static final long serialVersionUID = 1498884168645406117L;
 

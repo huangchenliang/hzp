@@ -2,9 +2,9 @@ package com.hzp.framework.base;
 
 import com.hzp.framework.common.Constants;
 import com.hzp.framework.common.util.HttpRequestUtil;
-import com.hzp.framework.common.util.JsonUtil;
+import com.hzp.framework.common.util.JsonUtils;
 import com.hzp.framework.common.util.JssbUtil;
-import com.hzp.framework.common.util.StringUtil;
+import com.hzp.framework.common.util.StringUtils;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -155,8 +155,8 @@ public abstract class AbstractRequestService
             log.info( "流数据JSON格式：" + requestJson );
         }
         Map<String, Object> attrMap = parseRequestAttribute( request );
-        String pageJson = JssbUtil.assemblRequestJSON( requestJson, JsonUtil.toJSONString( uriMap ),
-                                                       JsonUtil.toJSONString( attrMap ) );
+        String pageJson = JssbUtil.assemblRequestJSON(requestJson, JsonUtils.toJSONString(uriMap ),
+                                                      JsonUtils.toJSONString(attrMap ) );
         return pageJson;
     }
 
@@ -229,8 +229,8 @@ public abstract class AbstractRequestService
     protected int getPageNum()
     {
         String pageNum = null/*getParameter( Constants.PAGE_NUM )*/;
-        pageNum = (StringUtil.isInvalidStr( pageNum ) || "".equals( pageNum )) ? Constants.DEFAULT_RANGESTART : pageNum;
-        int rangeStart = StringUtil.convertStringToInt( pageNum );
+        pageNum = (StringUtils.isInvalidStr(pageNum ) || "".equals(pageNum )) ? Constants.DEFAULT_RANGESTART : pageNum;
+        int rangeStart = StringUtils.convertStringToInt(pageNum );
         return rangeStart;
     }
 
@@ -242,7 +242,7 @@ public abstract class AbstractRequestService
     {
         String pageSize = null/*getParameter( Constants.PAGE_SIZE )*/;
         pageSize = Constants.DEFAULT_FETCHSIZE;
-        int fetchSize = StringUtil.convertStringToInt( pageSize );
+        int fetchSize = StringUtils.convertStringToInt(pageSize );
         return fetchSize;
     }
 

@@ -1,6 +1,6 @@
 package com.hzp.framework.common.tools;
 
-import com.hzp.framework.common.util.SpringUtil;
+import com.hzp.framework.common.util.SpringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.BeansException;
@@ -24,6 +24,6 @@ public class ApplicationContextRegister implements ApplicationContextAware
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException
     {
         log.debug( "ApplicationContextRegister.setApplicationContext:applicationContext" + applicationContext );
-        SpringUtil.setApplicationContext( applicationContext );
+        SpringUtils.setApplicationContext(applicationContext );
     }
 }

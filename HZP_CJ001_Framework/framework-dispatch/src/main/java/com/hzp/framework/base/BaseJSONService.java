@@ -5,7 +5,7 @@ import com.hzp.framework.common.ResultData;
 import com.hzp.framework.common.exception.DispatchException;
 import com.hzp.framework.common.tools.UuidGenerator;
 import com.hzp.framework.common.util.HttpRequestUtil;
-import com.hzp.framework.common.util.JsonUtil;
+import com.hzp.framework.common.util.JsonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +52,7 @@ public abstract class BaseJSONService extends AbstractRequestService implements 
         }
         afterCompletion( req );
         //返回重复提交的值
-        ret = setRepeatAct( req, ret );
+//        ret = setRepeatAct( req, ret );
         log.debug( "serviceUrl:" + serviceUrl + ",ret:" + ret );
         return ret;
     }
@@ -64,9 +64,9 @@ public abstract class BaseJSONService extends AbstractRequestService implements 
      */
     private String setRepeatAct(HttpServletRequest req, String ret)
     {
-        ResultData resultData = JsonUtil.parseObject( ret, ResultData.class );
+        ResultData resultData = JsonUtils.parseObject(ret, ResultData.class );
         resultData.setRepeatAct( UuidGenerator.getUuidWithLine() );
-        ret = JsonUtil.toJSONString( resultData );
+        ret = JsonUtils.toJSONString(resultData );
         return ret;
     }
 

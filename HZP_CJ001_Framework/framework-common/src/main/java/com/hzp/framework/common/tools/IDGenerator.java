@@ -1,6 +1,6 @@
 package com.hzp.framework.common.tools;
 
-import com.hzp.framework.common.exception.ApecRuntimeException;
+import com.hzp.framework.common.exception.HzpRuntimeException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -62,7 +62,7 @@ public abstract class IDGenerator
         catch (SocketException | UnknownHostException e)
         {
             log.error( "LocalMac.getLocalMac:case" + e.getMessage() );
-            throw new ApecRuntimeException( "IDGenerator.getLocalMac:case", e.getMessage() );
+            throw new HzpRuntimeException("IDGenerator.getLocalMac:case", e.getMessage() );
         }
 
         return sb.toString();

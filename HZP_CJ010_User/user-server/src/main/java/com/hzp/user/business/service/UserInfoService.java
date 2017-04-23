@@ -1,6 +1,8 @@
 package com.hzp.user.business.service;
 
+import com.hzp.framework.common.exception.HzpRuntimeException;
 import com.hzp.user.model.UserInfo;
+import com.hzp.user.vo.UserInfoVO;
 
 import java.util.List;
 
@@ -18,4 +20,17 @@ public interface UserInfoService
      * @return 用户信息集合
      */
     List<UserInfo> queryAll();
+
+    /**
+     * 根据条件查询用户信息
+     * @param userInfoVO 查询条件
+     * @return 符合条件的用户信息
+     */
+    List<UserInfo> queryByCondition(UserInfoVO userInfoVO);
+
+    /**
+     * 新增用户信息
+     * @param userInfoVO 用户信息
+     */
+    void add(UserInfoVO userInfoVO) throws HzpRuntimeException;
 }

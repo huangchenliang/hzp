@@ -7,7 +7,7 @@ package com.hzp.framework.common.exception;
  * 完成日期：2016-07-23
  * 编码作者：
  */
-public class ServerException extends ApecRuntimeException
+public class ServerException extends HzpRuntimeException
 {
     private static final long serialVersionUID = -5650322399598065544L;
 

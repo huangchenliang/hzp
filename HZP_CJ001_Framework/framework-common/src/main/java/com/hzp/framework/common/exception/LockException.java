@@ -6,7 +6,7 @@ package com.hzp.framework.common.exception;
  * 完成日期：2016-07-23
  * 编码作者：
  */
-public class LockException extends ApecRuntimeException
+public class LockException extends HzpRuntimeException
 {
 
     public LockException(String errorCode, String message)

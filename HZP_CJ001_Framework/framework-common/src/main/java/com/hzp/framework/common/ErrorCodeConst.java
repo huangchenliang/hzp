@@ -9,6 +9,21 @@ package com.hzp.framework.common;
  */
 public interface ErrorCodeConst
 {
+    //DAO操作异常
+    String DAO_EXCEPTION = "100030";
+    String DAO_SAVE_EXCEPTION = "100031";
+    String DAO_DELETE_EXCEPTION = "100032";
+    String DAO_UPDATE_EXCEPTION = "100033";
+    String DAO_GET_EXCEPTION = "100034";
+
+    String SAVE_EXCEPTION = "100041";
+    String DELETE_EXCEPTION = "100042";
+    String UPDATE_EXCEPTION = "100043";
+    String GET_EXCEPTION = "100044";
+
+    String PROCEDURE_EXCEPTION = "100045";
+
+
     //=========== 支付错误信息码start===================
     String SIGN_NOT_PASS = "252000";
     String OPERATE_FAIL = "252001";

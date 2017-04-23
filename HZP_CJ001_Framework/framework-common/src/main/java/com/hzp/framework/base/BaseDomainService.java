@@ -3,7 +3,7 @@ package com.hzp.framework.base;
 import com.alibaba.fastjson.TypeReference;
 import com.hzp.framework.common.ResultData;
 import com.hzp.framework.common.tools.IDGenerator;
-import com.hzp.framework.common.util.JsonUtil;
+import com.hzp.framework.common.util.JsonUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -44,12 +44,12 @@ public abstract class BaseDomainService {
      * @return
      */
     protected <T> ResultData<T> getResultJSON(String jsonStr, Class<T> clazz) {
-        ResultData<T> resultDataJSON = JsonUtil.parseObject(jsonStr, new TypeReference<ResultData<T>>() {
+        ResultData<T> resultDataJSON = JsonUtils.parseObject(jsonStr, new TypeReference<ResultData<T>>() {
         });
         // 泛型类型调用parseObject的时候，使用parseObject可以转换Class，
         // 但是后边传TypeReference或者Type就解析不出泛型类型了，需要再转换一次
         if (null != resultDataJSON.getData() && StringUtils.isNotBlank(resultDataJSON.getData().toString())) {
-            T data = JsonUtil.parseObject(resultDataJSON.getData().toString(), clazz);
+            T data = JsonUtils.parseObject(resultDataJSON.getData().toString(), clazz);
             resultDataJSON.setData(data);
         }
         return resultDataJSON;
@@ -61,7 +61,7 @@ public abstract class BaseDomainService {
      * @return
      */
     protected <T> T parseObject(String text, Class<T> clazz) {
-        return JsonUtil.parseObject(text, clazz);
+        return JsonUtils.parseObject(text, clazz);
     }
 
     /**
@@ -72,6 +72,6 @@ public abstract class BaseDomainService {
      * @return
      */
     protected <T> List<T> parseArray(String text, Class<T> clazz) {
-        return JsonUtil.parseArray(text, clazz);
+        return JsonUtils.parseArray(text, clazz);
     }
 }

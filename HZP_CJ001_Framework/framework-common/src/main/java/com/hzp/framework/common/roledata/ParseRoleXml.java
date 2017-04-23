@@ -4,7 +4,7 @@ import com.hzp.framework.common.roledata.pojo.Param;
 import com.hzp.framework.common.roledata.pojo.Role;
 import com.hzp.framework.common.roledata.pojo.RoleQuery;
 import com.hzp.framework.common.roledata.pojo.RoleQuerys;
-import com.hzp.framework.common.util.XmlUtil;
+import com.hzp.framework.common.util.XmlUtils;
 import com.google.common.base.Strings;
 
 import javax.xml.bind.JAXBException;
@@ -19,7 +19,7 @@ import javax.xml.bind.JAXBException;
 public class ParseRoleXml {
 
     public static RoleQuerys roleQuerys(String file) throws JAXBException {
-        return XmlUtil.readString(RoleQuerys.class,file);
+        return XmlUtils.readString(RoleQuerys.class, file);
     }
 
     public static void main(String[] args) throws JAXBException {
