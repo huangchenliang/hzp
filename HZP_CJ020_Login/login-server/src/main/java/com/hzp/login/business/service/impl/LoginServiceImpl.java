@@ -1,11 +1,12 @@
 package com.hzp.login.business.service.impl;
 
 import com.hzp.framework.base.BaseDomainService;
+import com.hzp.framework.common.exception.HzpRuntimeException;
 import com.hzp.login.business.service.LoginService;
+import com.hzp.login.vo.LoginVO;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
-
 
 /**
  * @Description: UserInfoService具体业务实现
@@ -17,4 +18,9 @@ public class LoginServiceImpl extends BaseDomainService implements LoginService
 {
     private static Log log = LogFactory.getLog(LoginServiceImpl.class);
 
+    @Override
+    public void login(LoginVO loginVO) throws HzpRuntimeException
+    {
+
+    }
 }
