@@ -18,4 +18,12 @@ public interface UserInfoDAO extends BaseDAO<UserInfo, Long>
      * @return 用户信息
      */
     UserInfo findByUserNoAndEnableFlag(String userNO, EnableFlag enableFlag);
+
+    /**
+     * 根据手机号码查询用户信息
+     * @param phone 手机号码
+     * @param enableFlag 是否删除
+     * @return 用户信息
+     */
+    UserInfo findByPhoneAndEnableFlag(String phone, EnableFlag enableFlag);
 }

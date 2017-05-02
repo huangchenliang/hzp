@@ -116,4 +116,21 @@ public class UserInfoServiceImpl extends BaseDomainService implements UserInfoSe
         }
         return userInfoDTO;
     }
+
+    @Override
+    public UserInfoDTO getUserByPhone(UserInfoVO userInfoVO) throws HzpRuntimeException
+    {
+        if(Objects.isNull(userInfoVO) || StringUtils.isBlank(userInfoVO.getPhone()))
+        {
+            throw new BusinessException(ErrorCodeConst.PHONE_NOT_NULL);
+        }
+        UserInfo userInfo = userInfoDAO.findByPhoneAndEnableFlag(userInfoVO.getPhone(), EnableFlag.Y);
+        UserInfoDTO userInfoDTO = null;
+        if(Objects.nonNull(userInfo))
+        {
+            userInfoDTO = new UserInfoDTO();
+            BeanUtils.copyProperties(userInfo, userInfoDTO);
+        }
+        return userInfoDTO;
+    }
 }

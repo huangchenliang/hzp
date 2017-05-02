@@ -79,7 +79,7 @@ public class UserInfoController extends BaseController
 
     /**
      * 根据用户编号获取用户信息
-     * @return 符合条件的用户信息集合
+     * @return 符合条件的用户信息
      */
     @RequestMapping(value = "/getUserByUserNo", produces = Constants.APPLICATION_JSON_CHARSET_UTF8)
     public String getUserByUserNo(@RequestBody String jsonStr)
@@ -88,6 +88,25 @@ public class UserInfoController extends BaseController
         try
         {
             UserInfoDTO userInfoDTO = userInfoService.getUserByUserNo(userInfoVO);
+            return super.getResultJSONStr(true, userInfoDTO, "");
+        }
+        catch (HzpRuntimeException e)
+        {
+            return super.getResultJSONStr(false, "", e.getErrorCode());
+        }
+    }
+
+    /**
+     * 根据手机获取用户信息
+     * @return 符合条件的用户信息
+     */
+    @RequestMapping(value = "/getUserByPhone", produces = Constants.APPLICATION_JSON_CHARSET_UTF8)
+    public String getUserByPhone(@RequestBody String jsonStr)
+    {
+        UserInfoVO userInfoVO = super.getFormJSON(jsonStr, UserInfoVO.class);
+        try
+        {
+            UserInfoDTO userInfoDTO = userInfoService.getUserByPhone(userInfoVO);
             return super.getResultJSONStr(true, userInfoDTO, "");
         }
         catch (HzpRuntimeException e)

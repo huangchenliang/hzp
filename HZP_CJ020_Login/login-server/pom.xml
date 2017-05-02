@@ -19,6 +19,11 @@
             <artifactId>framework-jpa</artifactId>
             <version>1.0.1-RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.hzp</groupId>
+            <artifactId>framework-springcloud</artifactId>
+            <version>1.0.1-RELEASE</version>
+        </dependency>
         <!-- spring cloud依赖包 start -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

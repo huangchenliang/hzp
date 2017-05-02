@@ -55,6 +55,11 @@ public class LoginVO extends BaseVO
     private String phone;
 
     /**
+     * 手机验证码
+     */
+    private String validateCode;
+
+    /**
      * 用户出生日期
      */
     private Date birth;
@@ -334,5 +339,23 @@ public class LoginVO extends BaseVO
     public void setBirth(Date birth)
     {
         this.birth = birth;
+    }
+
+    /**
+     * 获取手机验证码
+     * @return validateCode 手机验证码
+     */
+    public String getValidateCode()
+    {
+        return this.validateCode;
+    }
+
+    /**
+     * 设置手机验证码
+     * @param validateCode 手机验证码
+     */
+    public void setValidateCode(String validateCode)
+    {
+        this.validateCode = validateCode;
     }
 }

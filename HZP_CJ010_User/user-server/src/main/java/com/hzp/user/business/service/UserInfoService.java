@@ -41,4 +41,12 @@ public interface UserInfoService
      * @return 封装的用户信息
      */
     UserInfoDTO getUserByUserNo(UserInfoVO userInfoVO) throws HzpRuntimeException;
+
+    /**
+     * 根据手机号码查询用户信息
+     * @param userInfoVO 用户手机号码
+     * @return 用户信息
+     * @throws HzpRuntimeException 业务异常
+     */
+    UserInfoDTO getUserByPhone(UserInfoVO userInfoVO) throws HzpRuntimeException;
 }
